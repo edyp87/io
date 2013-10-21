@@ -1,0 +1,30 @@
+% PREAMBUŁA / USTAWIENIA
+\documentclass[11pt,a4paper,leqno]{article}			% czcionka 11pt, a4, wzory do lewej, artykuł
+\usepackage[polish]{babel} 				% ustawiamy polskie czcionki
+\usepackage[utf8]{inputenc}				% .. i kodowanie
+\usepackage[T1]{fontenc}				% kodowanie fontow
+\usepackage{setspace}					% insterlinia: 1.5
+\frenchspacing						% przestrzen po zakonczeniu zdania
+\usepackage{indentfirst}					% wciecie do kazdego akapitu
+\renewcommand{\thesection}{\arabic{section}.}       % definiujemy wygodne polecenia
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+
+\begin{document}
+
+% STRONA TYTUŁOWA
+\begin{center}
+\thispagestyle{empty} 					%brak nuemracji, naglowka i stopki
+{\Large Studencka Pracownia Inżynierii Oprogramowania}\\[0.5cm]
+{\large Instytut Informatyki Uniwersytetu Wrocławskiego}\\[6.0cm]
+
+
+{\large Mateusz Kawa, Maciej Przybecki, Marek Jenda}\\[1.5cm]
+{\huge Dokumentacja witryny internetowej }\\[0.5cm]
+{\huge NUMIZMATYKA }\\[1.5cm]
+{\large Założenia ogólne}\\[0.5cm]
+\vfill
+{\large Wrocław, \today}\\[0.5cm]
+{\large Wersja 0.1}
+\end{center}
+\end{document}
