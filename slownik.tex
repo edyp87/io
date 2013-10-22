@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%                   PREAMBUŁA / USTAWIENIA               %%%%%%%%%%%%%%%%%%%
+
+\documentclass [11pt, a4paper, leqno]	{article}				% czcionka 11pt, a4, numery formuł do lewej, artykuł
+\usepackage [polish]	{babel} 						% ustawiamy jezyk polski dokumentu wynikowego
+\usepackage 		{polski}						% zapewniamy sobie poprawne lamanie polski wyrazow
+\usepackage [utf8]		{inputenc}						%  kodowanie pliku zrodlowego
+\usepackage [T1]		{fontenc}						% kodowanie fontow
+\usepackage 		{indentfirst}						% wciecie do kazdego akapitu
+\usepackage			{setspace}						% interlinia: 1.15
+\setstretch{1.15}
+\frenchspacing									% przestrzen po zakonczeniu zdania
+\renewcommand {\thesection} 		{\arabic{section}.}       		% chcemy kropki na koncu numeracji sekcji
+\renewcommand {\thesubsection} 	{\arabic{section}. \arabic{subsection}.}
+\renewcommand {\thesubsubsection} 	{\arabic{section}. \arabic{subsection}. \arabic{subsubsection}.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin {document}
+
+% STRONA TYTUŁOWA
+
+\begin {center}
+\thispagestyle {empty} 					% brak numeracji, naglowka i stopki
+{\large Studencka Pracownia Inżynierii Oprogramowania} 	\\ [0.5cm]
+{\large Instytut Informatyki Uniwersytetu Wrocławskiego} 	\\ [6.0cm]
+
+{\large Mateusz Kawa, Maciej Przybecki, Marek Jenda} 	\\ [1.5cm]
+
+{\huge Dokumentacja witryny internetowej sklepu} 		\\ [0.5cm]
+{\huge NUMIZMATYKA} 						\\ [1.5cm]
+
+{\large Słownik} 							\\ [0.5cm]
+
+\vfill
+{\large Wrocław, \today}						\\ [0.5cm]
+{\large Wersja 0.1}
+\end {center}
+
+\newpage
+
+% TABELKA WERSJI
+\textit{Tabela 1.} Historia zmian dokonanych w dokumencie.
+\begin{center}
+\begin{tabular}{| l | l | l | l |}
+\hline
+	\multicolumn{1}{|c|}{Data} & \multicolumn{1}{|c|}{Numer wersji} &  \multicolumn{1}{|c|}{Opis} & \multicolumn{1}{|c|}{Autor} \\ \hline \hline
+	2013-10-22 & 0.1 & Utworzenie dokumentu & Marek Jenda \\ \hline
+\end{tabular}
+\end{center}
+\newpage
+
+\section{Słownik}
+\begin{description}
+
+ \item[baza danych] --- system przechowujący dane w sposób zorganizowany. Organizacja bazy danych jest określana za pomocą zbioru ustalonych reguł. 
+
+\item[hosting] --- udostępnianie zasobów serwerowych; umożliwia organizacjom i klientom indywidualnym udostępnianie treści w internecie.
+
+\item[HTML (ang.HyperText Markup Language)] ---  system znaczników służących do tworzenia stron internetowych.
+
+\item[implementacja] --- wdrożenie abstrakcyjnego opisu systemu lub programu.
+
+\item[interfejs graficzny] --- rodzaj interfejsu użytkownika, który umożliwia interakcję użytkownika z programem poprzez zestaw graficznych elementów.
+
+\item[język programowania] --- język formalny powstały w celu określenia istrukcji wykonywanych przez maszynę (komputer). 
+Język ten może służyć jako sposób komunikowania komputerowi instrukcji, które ma wykonać. W innym znaczeniu język programowania jest wykorzystywany jako sposób precyzyjnej ekspresji algorytmów.
+
+\item[kod źródłowy] --- ciąg instrukcji komputera zapisanych w postaci czytelnego dla człowieka języka programowania. 
+
+\item[użytkownik] --- osoba lub osoby korzystające bezpośrednio z produktu.
+
+\item[witryna] --- strona internetowa, zwykle komercyjna, eksponująca coś; np. strona sklepu internetowego. W niniejszej dokumentacji hasło to, którego definicja została przytoczona, stosowane jest zamiennie wraz z określaniem w ten sposób przedmiotu tej dokumentacji (tj. witryny internetowej sklepu poświęconego tematyce numizmatycznej).
+
+
+\end{description}
+
+\end{document}
