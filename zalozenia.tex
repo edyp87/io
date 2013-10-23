@@ -1,59 +1,96 @@
-% PREAMBUŁA / USTAWIENIA
-\documentclass[11pt,a4paper,leqno]{article}			% czcionka 11pt, a4, wzory do lewej, artykuł
-\usepackage[polish]{babel} 				% ustawiamy polskie czcionki
-\usepackage[utf8]{inputenc}				% .. i kodowanie
-\usepackage[T1]{fontenc}				% kodowanie fontow
-\usepackage{setspace}					% insterlinia: 1.5
-\frenchspacing						% przestrzen po zakonczeniu zdania
-\usepackage{indentfirst}					% wciecie do kazdego akapitu
-\renewcommand{\thesection}{\arabic{section}.}       % definiujemy wygodne polecenia
-\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
-\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%                   PREAMBUŁA / USTAWIENIA               %%%%%%%%%%%%%%%%%%%
+
+\documentclass [11pt, a4paper, leqno]	{article}	% czcionka 11pt, a4, numery formuł do lewej, artykuł
+\usepackage [polish]	{babel} 					% ustawiamy jezyk polski dokumentu wynikowego
+\usepackage 			{polski}					% zapewniamy sobie poprawne lamanie polski wyrazow
+\usepackage [utf8]		{inputenc}					% kodowanie pliku zrodlowego
+\usepackage [T1]		{fontenc}					% kodowanie fontow
+\usepackage 			{indentfirst}				% wciecie do kazdego akapitu
+\usepackage				{setspace}					% interlinia: 1.15
+\setstretch {1.15}
+\frenchspacing										% przestrzen po zakonczeniu zdania
+\renewcommand {\thesection} 		{\arabic{section}.}       	% chcemy kropki na koncu numeracji sekcji
+\renewcommand {\thesubsection} 		{\arabic{section}. \arabic{subsection}.}
+\renewcommand {\thesubsubsection} 	{\arabic{section}. \arabic{subsection}. \arabic{subsubsection}.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
 % STRONA TYTUŁOWA
+
 \begin{center}
-\thispagestyle{empty} 					%brak nuemracji, naglowka i stopki
-{\Large Studencka Pracownia Inżynierii Oprogramowania}\\[0.5cm]
-{\large Instytut Informatyki Uniwersytetu Wrocławskiego}\\[6.0cm]
+	\thispagestyle{empty} 							% brak numeracji, naglowka i stopki
+	{\large Studencka Pracownia Inżynierii Oprogramowania} 		\\ [0.5cm]
+	{\large Instytut Informatyki Uniwersytetu Wrocławskiego} 	\\ [6.0cm]
 
+	{\large Mateusz Kawa, Maciej Przybecki, Marek Jenda} 		\\ [1.5cm]
 
-{\large Mateusz Kawa, Maciej Przybecki, Marek Jenda}\\[1.5cm]
-{\huge Dokumentacja witryny internetowej sklepu }\\[0.5cm]
-{\huge NUMIZMATYKA }\\[1.5cm]
-{\large Założenia ogólne}\\[0.5cm]
-\vfill
-{\large Wrocław, \today}\\[0.5cm]
-{\large Wersja 0.1}
+	{\huge Dokumentacja witryny internetowej sklepu} 			\\ [0.5cm]
+	{\huge NUMIZMATYKA} 										\\ [1.5cm]
+
+	{\large Założenia ogólne} 									\\ [0.5cm]
+
+	\vfill
+	
+	{\large Wrocław, \today}									\\ [0.5cm]
+	{\large Wersja 0.1}
 \end{center}
 
 \newpage
 
 % TABELKA WERSJI
+
 \textit{Tabela 1.} Historia zmian dokonanych w dokumencie.
+
 \begin{center}
-\begin{tabular}{| l | l | l | l |}
-\hline
-	\multicolumn{1}{|c|}{Data} & \multicolumn{1}{|c|}{Numer wersji} &  \multicolumn{1}{|c|}{Opis} & \multicolumn{1}{|c|}{Autor} \\ \hline \hline
-	2013-10-21 & 0.1 & Utworzenie dokumentu & Marek Jenda \\ \hline
-\end{tabular}
+	\begin{tabular}{| l | l | l | l |}
+		\hline
+		\multicolumn{1}{|c|}{Data} & 
+		\multicolumn{1}{|c|}{Numer wersji} &  
+		\multicolumn{1}{|c|}{Opis} &
+		\multicolumn{1}{|c|}{Autor} \\ \hline \hline
+		2013-10-21 & 0.1 & Utworzenie dokumentu & Marek Jenda \\ \hline
+	\end{tabular}
 \end{center}
+
 \newpage
 
 % SPIS TRESCI
+
 \tableofcontents
-\newpage
-
 
 \newpage
+
 \section{Wprowadzenie}
 
 \subsection{Cel dokumentu}
 \noindent
-Celem  dokumentu jest prezentacja i opis wymagań ogólnych projektu witryny interentowej sklepu poświęconego tematyce numizmatycznej.
-Kwestie dotyczące implemetacji i realizacji konkretnych kroków związanych z budową witryny zostały przedostawione w stosownych dokumentach.
+Celem  dokumentu jest prezentacja i opis wymagań ogólnych projektu witryny internetowej sklepu poświęconego tematyce numizmatycznej (dalej nazywanej ,,witryną'').
+Szczegółowe kwestie dotyczące implementacji i realizacji konkretnych kroków związanych z budową witryny zostały przedstawione w stosownych dokumentach.
+
+Niniejszy dokument jest przeznaczony dla zleceniodawcy i osób wdrażających witrynę.
 
 \subsection{Ogólny cel powstania witryny}
+\noindent
+Głównym celem witryny jest umożliwienie wygodnego sposobu dokonywania zakupów przedmiotów związanych z obszarami numizmatyki. Przedmioty umieszczone są w odpowiadających im kategoriach, zatem użytkownik witryny (będący klientem sklepu) może odnaleźć poszukiwany przez niego przedmiot poprzez system manualnej nawigacji z podziałem na kategorie; innym sposobem jest skorzystanie z opcji wyszukiwania automatycznego. 
+
+Każdy przedmiot umieszczony jest na dedykowanej dla niego stronie, na której znajdują się stosowne informacje szczegółowe. 
+
+Użytkownik witryny może dodać wybrany przedmiot do wirtualnej listy zakupów (tzw. koszyk), po czym może kontynuować zakupy lub przejść do procesu finalizowania zakupów. Usługi płatnicze zarządzane są za pośrednictwem zewnętrznych serwisów, np. PayPal. 
+
+Od strony administracyjnej, witryna umożliwia dodawanie nowych produktów a także zarządzanie już istniejącymi.
+
+\section{Opis użytkowników witryny}
+
+\subsection{Kto będzie korzystał z witryny?}
+\noindent
+Podstawowymi użytkownikami witryny będą klienci sklepu internetowego oraz administratorzy tegoż sklepu. 
+
+Klienci sklepu będą mieli możliwość zapoznania się z ofertą oraz dokonania zakupu wybranych przedmiotów. Będą mogli również skontaktować się z obsługą sklepu poprzez wbudowany formularz kontaktowy. Każdy klient będzie mógł założyć swoje konto w sklepie co umożliwi mu przeglądanie historii transakcji, a także dodawanie istniejących produktów do listy ulubionych.
+
+Administratorzy będą mogli dodawać nowe produktu do sklepu, a także zarządzać już istniejącymi. Ponadto ich zadaniem będzie zarządzanie kontami użytkowników.  
+
 
 \end{document}
