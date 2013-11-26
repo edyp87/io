@@ -1,0 +1,180 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%                   PREAMBUŁA / USTAWIENIA               %%%%%%%%%%%%%%%%%%%
+
+\documentclass [11pt, a4paper, leqno]	{article}	% czcionka 11pt, a4, numery formuł do lewej, artykuł
+\usepackage [polish]	{babel} 					% ustawiamy jezyk polski dokumentu wynikowego
+\usepackage 			{polski}					% zapewniamy sobie poprawne lamanie polski wyrazow
+\usepackage [utf8]		{inputenc}					% kodowanie pliku zrodlowego
+\usepackage [T1]		{fontenc}					% kodowanie fontow
+\usepackage 			{indentfirst}				% wciecie do kazdego akapitu
+\usepackage				{setspace}					% interlinia: 1.15
+\setstretch {1.15}
+\frenchspacing										% przestrzen po zakonczeniu zdania
+\renewcommand {\thesection} 		{\arabic{section}.}       	% chcemy kropki na koncu numeracji sekcji
+\renewcommand {\thesubsection} 		{\arabic{section}. \arabic{subsection}.}
+\renewcommand {\thesubsubsection} 	{\arabic{section}. \arabic{subsection}. \arabic{subsubsection}.}
+\textheight 620pt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% STRONA TYTUŁOWA
+
+\begin{center}
+	\thispagestyle{empty} 							% brak numeracji, naglowka i stopki
+	{\large Studencka Pracownia Inżynierii Oprogramowania} 		\\ [0.5cm]
+	{\large Instytut Informatyki Uniwersytetu Wrocławskiego} 	\\ [6.0cm]
+
+	{\large Mateusz Kawa, Maciej Przybecki, Marek Jenda} 		\\ [1.5cm]
+
+	{\huge Dokumentacja witryny internetowej sklepu} 			\\ [0.5cm]
+	{\huge NUMIZMATYKA} 										\\ [1.5cm]
+
+	{\large Harmonogram} 										\\ [0.5cm]
+
+	\vfill
+	
+	{\large Wrocław, \today}									\\ [0.5cm]
+	{\large Wersja 0.1}
+\end{center}
+
+\newpage
+
+% TABELKA WERSJI
+
+\textit{Tabela 0.} Historia zmian dokonanych w dokumencie
+
+\begin{center}
+	\begin{tabular}{| l | l | l | l |}
+		\hline
+		\multicolumn{1}{|c|}{Data} & 
+		\multicolumn{1}{|c|}{Numer wersji} &  
+		\multicolumn{1}{|c|}{Opis} &
+		\multicolumn{1}{|c|}{Autor} \\ \hline \hline
+		2013-11-23 & 0.1 & Utworzenie dokumentu & Marek Jenda \\ \hline
+	\end{tabular}
+\end{center}
+
+\newpage
+
+% SPIS TRESCI
+
+\tableofcontents
+
+\newpage
+
+\section{Wprowadzenie}
+
+\subsection{Cel dokumentu}
+\noindent
+Niniejszy dokument zawiera ustalenia dotyczące harmonogramu związanego z realizacją projektu witryny internetowej ,,NUMIZMATYKA''.
+
+\section{Harmonogram}
+\noindent
+Realizacja projektu zgodnie z dobrą praktyką inżynierii oprogramowania została podzielona na kilka etapów. Ze względu na rozmiar przedsięwzięcia oraz dobrą dokumentację pokrewnych projektów przyjęty został model kaskadowy. Prace postępują w sposób sekwencyjny, a każdy etap ma ustalony czas rozpoczęcia i czas zakończenia, których należy przestrzegać.
+
+Projekt został podzielony na następujące etapy:
+\begin{itemize}
+	\item Analiza,
+	\item Projektowanie,
+	\item Implementacja,
+	\item Testowanie,
+	\item Ewaluacja i przekazanie.
+\end{itemize}
+
+Osoby zaangażowane w realizację projektu pracują w dni robocze po 8 godzin zegarowych. Odstęp między każdym z etapów wynosi 2 dni, co chroni przed opóźnieniami z uruchomieniem kolejnego etapu.
+
+\subsection{Etap analizy}
+\noindent
+Podczas etapu analizy ustalane są wymagania projektu, potrzeby wszystkich grup użytkowników oraz precyzowane są szczegóły dotyczące architektury systemu końcowego. Dokonywane są decyzje dotyczące narzędzi, przy pomocy których projektowany będzie system. 
+
+Przewidywany czas potrzebny na realizację fazy analizy - 7 dni. \\
+
+
+\textit{Tabela 1.} Ramy czasowe etapu analizy
+
+\begin{center}
+	\begin{tabular}{| l | l | l |}
+		\hline
+		\multicolumn{1}{|c|}{Treść} & 
+		\multicolumn{1}{|c|}{Data rozpoczęcia} & 
+		\multicolumn{1}{|c|}{Data zakończenia} \\ \hline \hline
+		Analiza & 2013-10-06 & 2013-10-13 \\ \hline
+	\end{tabular}
+\end{center}
+
+\subsection{Etap projektowania}
+\noindent
+W etapie tym definiowana jest architektura sprzętowa i programowa, specyfikowane są parametry związane z wydajnością i bezpieczeństwem systemu. Projektowana jest baza danych oraz wybierane jest środowisko, w którym będzie powstawał system. W etapie tym projektowany jest wstępny interfejs użytkownika. 
+
+Dokonywany jest szczegółowy podział systemu na mniejsze moduły, określane są związki między nimi a także tworzony jest diagram klas w obrębie każdego modułu.
+
+Rezultatem etapu projektowania są specyfikacje względem których będzie dokonywana implementacja systemu. 
+
+Przewidziany czas trwania wynosi 30 dni. \\
+
+\textit{Tabela 2.} Ramy czasowe etapu projektowania
+
+\begin{center}
+	\begin{tabular}{| l | l | l |}
+		\hline
+		\multicolumn{1}{|c|}{Treść} & 
+		\multicolumn{1}{|c|}{Data rozpoczęcia} & 
+		\multicolumn{1}{|c|}{Data zakończenia} \\ \hline \hline
+		Projektowanie & 2013-10-16 & 2013-11-15 \\ \hline
+	\end{tabular}
+\end{center}
+
+\subsection{Etap implementacji}
+\noindent
+Ten etap zawiera właściwe konstruowanie systemu na podstawie specyfikacji określonych w poprzednich etapach. Każdy moduł programu implementowany jest przez oddzielną grupę programistów, a także twórców interfejsu użytkownika. 
+
+Rezultatem tego etapu są w pełni działające fragmenty systemu, które po scaleniu dają pełny system.
+
+Przewidziany czas trwania tego etapu wynosi 120 dni. \\
+
+\textit{Tabela 3.} Ramy czasowe etapu implementacji
+
+\begin{center}
+	\begin{tabular}{| l | l | l |}
+		\hline
+		\multicolumn{1}{|c|}{Treść} & 
+		\multicolumn{1}{|c|}{Data rozpoczęcia} & 
+		\multicolumn{1}{|c|}{Data zakończenia} \\ \hline \hline
+		Implementacja & 2013-11-18 & 2014-03-18 \\ \hline
+	\end{tabular}
+\end{center}
+
+\subsection{Etap testowania}
+\noindent
+W etapie tym pojedyncze moduły jak i zintegrowany system poddawane są testom. Niezależna grupa osób testujących tworzy sytuacje testowe, których celem jest metodycznie weryfikowanie poprawności działania systemu i zgodności ze specyfikacją.
+
+W etapie tym przewidziana jest możliwość wprowadzania poprawek do systemu w razie wykrytych błędów. 
+
+Czas trwania wynosi 45 dni. \\
+
+\textit{Tabela 4.} Ramy czasowe etapu testowania
+
+\begin{center}
+	\begin{tabular}{| l | l | l |}
+		\hline
+		\multicolumn{1}{|c|}{Treść} & 
+		\multicolumn{1}{|c|}{Data rozpoczęcia} & 
+		\multicolumn{1}{|c|}{Data zakończenia} \\ \hline \hline
+		Testowanie & 2013-03-20 & 2014-05-02 \\ \hline
+	\end{tabular}
+\end{center}
+
+\subsection{Etap ewaluacji i przekazania}
+\noindent
+W etapie tym produkt jest prezentowany zleceniodawcy w celu weryfikacji wstępnych założeń. 
+
+\newpage
+
+\addcontentsline{toc}{section}{Literatura}
+\begin{thebibliography}{2}
+	\bibitem{KrollKruchten07} Kroll P., Kruchten P., \emph{Rational Unified Process od strony praktycznej}, Warszawa, Wydawnictwo naukowo techniczne~2007.
+\end{thebibliography}
+
+\end{document}
