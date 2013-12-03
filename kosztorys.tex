@@ -7,6 +7,9 @@
 \usepackage [utf8]		{inputenc}					% kodowanie pliku zrodlowego
 \usepackage [T1]		{fontenc}					% kodowanie fontow
 \usepackage 			{indentfirst}				% wciecie do kazdego akapitu
+\usepackage{amsthm}
+\usepackage[intlimits]{amsmath}
+ 
 \usepackage				{setspace}					% interlinia: 1.15
 \setstretch {1.15}
 \frenchspacing										% przestrzen po zakonczeniu zdania
@@ -14,6 +17,9 @@
 \renewcommand {\thesubsection} 		{\arabic{section}. \arabic{subsection}.}
 \renewcommand {\thesubsubsection} 	{\arabic{section}. \arabic{subsection}. \arabic{subsubsection}.}
 \textheight 620pt
+\makeatletter
+\renewcommand\@biblabel[1]{#1.}
+\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -36,14 +42,14 @@
 	\vfill
 	
 	{\large Wrocław, \today}									\\ [0.5cm]
-	{\large Wersja 0.1}
+	{\large Wersja 0.2}
 \end{center}
 
 \newpage
 
 % TABELKA WERSJI
 
-\textit{Tabela 0.} Historia zmian dokonanych w dokumencie
+\textit{Tabela 1.} Historia zmian dokonanych w dokumencie
 
 \begin{center}
 	\begin{tabular}{| l | l | l | l |}
@@ -53,6 +59,7 @@
 		\multicolumn{1}{|c|}{Opis} &
 		\multicolumn{1}{|c|}{Autor} \\ \hline \hline
 		2013-11-26 & 0.1 & Utworzenie dokumentu & Maciej Przybecki \\ \hline
+		2013-12-03 & 0.2 & Usunięcie błędów technicznych & Maciej Przybecki \\ \hline
 	\end{tabular}
 \end{center}
 \newpage
@@ -67,7 +74,7 @@
 
 \subsection{Cel dokumentu}
 \noindent
-Niniejszy dokument zawiera ustalony kosztorys z realizacją projektu witryny internetowej ,,NUMIZMATYKA''. \\
+Niniejszy dokument zawiera kosztorys realizacji projektu witryny internetowej NUMIZMATYKA. \\
 
 \section{Kosztorys}
 \noindent
@@ -75,94 +82,96 @@ Realizacja projektu zgodnie z dobrą praktyką inżynierii oprogramowania zosta�
 
 Projekt został podzielony na następujące etapy:
 \begin{itemize}
-\item Analiza,
-\item Projektowanie,
-\item Implementacja,
-\item Testowanie,
-\item Ewaluacja i przekazanie.
+\item analiza,
+\item projektowanie,
+\item implementacja,
+\item testowanie,
+\item ocena i przekazanie.
 \end{itemize}
 
 
 \subsection{Etap analizy}
 \noindent
-Na tym etapie wymagane jest przeprowadzenie badania rynku, oraz zakup odpowiednich narzędzi przy pomocy, których projektowany będzie system. \\
-\textit{Tabela 1.} Koszty dla etapu analizy
+Na tym etapie są wymagane badania rynku oraz zakup odpowiednich narzędzi, z pomocą, których będzie projektowany system. \\ 
 
+\textit{Tabela 2.} Koszty etapu analizy
 \begin{center}
 	\begin{tabular}{| l | l |}
 		\hline
 		\multicolumn{1}{|c|}{Przedsięwzięcie} & 
 		\multicolumn{1}{|c|}{Przewidywany koszt} \\ \hline \hline
-		Przeprowadzenie ankiety elektronicznej na docelowej grupie odbiorczej & 5 tys. PLN \\ \hline
-		Zakup niezbędnego oprogramowania & 10 tys. PLN \\ \hline
+		Ankieta elektroniczna & 5 tys. zł \\ \hline
+		Zakup niezbędnych programów & 10 tys. zł \\ \hline
 	\end{tabular}
 \end{center}
 
 \subsection{Etap projektowania}
 \noindent
 Podczas tego etapu wymagane jest zatrudnienie 3 osób odpowiedzialnych za zaprojektowanie całego systemu. \\
-\begin{equation}3 [osoby] \times  8'500 [PLN/miesiąc] \times 1 [miesiąc] = 25'500 [PLN] \end{equation} \\
-Wykonany jest także zakup odpowiednichnarzędzi przy pomocy, których implementowany będzie system.  \\
-Zatrudnione będą także 2 osoby na stanowisko grafika komputerowego. Odpowiedzialne one będą za zaprojektowanie interfejsu użytkownika. \\
-\begin{equation}2 [osoby] \times 2'000 [PLN/miesiąc] \times 1 [miesiąc] = 4'000 [PLN] \end{equation} \\
-\textit{Tabela 2.} Koszty dla etapu projektowania
+\begin{equation}3 \text{[osoby]} \times  8500 \text{[zł/miesiąc]} \times 1 \text{[miesiąc]} = 25500 \text{[zł]} \end{equation} \\
+Wykonany jest także zakup odpowiednich narzędzi za pomocą, których będzie implementowany system.  \\
+Zatrudnione będą także dwie osoby na stanowisko grafika komputerowego. Odpowiedzialne one będą za zaprojektowanie interfejsu użytkownika. \\
+\begin{equation}2 \text{[osoby]} \times 2000 \text{[zł/miesiąc]} \times 1 \text{[miesiąc]} = 4000 \text{[zł]} \end{equation} \\
+\textit{Tabela 3.} Koszty etapu projektowania
 
 \begin{center}
 	\begin{tabular}{| l | l |}
 		\hline
 		\multicolumn{1}{|c|}{Przedsięwzięcie} & 
 		\multicolumn{1}{|c|}{Przewidywany koszt} \\ \hline \hline
-		Zakup serwera & 50 tys. PLN \\ \hline
-		Pieniądze przeznaczone na wypłaty dla projektantów & 25.5 tys. PLN \\ \hline
-		Zakup niezbędnego oprogramowania & 20 tys. PLN \\ \hline
-		Pieniądze przeznaczone na wypłaty dla grafików komputerowych & 4 tys. PLN \\ \hline
+		Zakup serwera & 50 tys. zł \\ \hline
+		Honoraria dla projektantów & 25,5 tys. zł \\ \hline
+		Zakup niezbędnych narzędzi & 20 tys. zł \\ \hline
+		Honoraria dla grafików komputerowych & 4 tys. zł \\ \hline
 	\end{tabular}
 \end{center}
 
 \subsection{Etap implementacji}
 \noindent
 Podczas tego etapu każdy moduł programu będzie implementowany przez oddzielną grupę programistów. \\
-Przewidywane są 3 grupy programistów składające się z 3 osób, stawka za miesiąc na osobę wynosi 4’000 PLN. \\
-\begin{equation}3 [osoby] \times 3 osoby \times 4'000 [PLN/miesiąc] \times  4 [miesiąc] = 144'000 [PLN] \end{equation} \\
-Zatrudnione będą także 2 osoby na stanowisko grafika komputerowego. Odpowiedzialne one będą za stworzenie interfejsu użytkownika. \\
-\begin{equation}2 [osoby] \times 2'000 [PLN/miesiąc] \times 4 [miesiąc] = 16'000 [PLN] \end{equation} \\
-\textit{Tabela 3.} Koszty dla etapu implementacji
+Przewidywane są 3 grupy programistów składające się z trzech osób, stawka za miesiąc na osobę wynosi 4000 zł. \\
+\begin{equation}3 \text{[grupy]} \times 3 \text{[osoby]} \times 4000 \text{[zł/miesiąc]} \times  4 \text{[miesiąc]} = 144000 \text{[zł]} \end{equation} \\
+Zatrudnione będą także dwie osoby na stanowisko grafika komputerowego. Odpowiedzialne one będą za stworzenie interfejsu użytkownika. \\
+\begin{equation}2 \text{[osoby]} \times 2000 \text{[zł/miesiąc]} \times 4 \text{[miesiąc]} = 16000 \text{[zł]} \end{equation} \\
+\textit{Tabela 4.} Koszty etapu implementacji
 
 \begin{center}
 	\begin{tabular}{| l | l |}
 		\hline
 		\multicolumn{1}{|c|}{Przedsięwzięcie} & 
 		\multicolumn{1}{|c|}{Przewidywany koszt} \\ \hline \hline
-		Pieniądze przeznaczone na wypłaty dla programistów & 144 tys. PLN \\ \hline
-		Pieniądze przeznaczone na wypłaty dla grafików komputerowych & 16 tys. PLN \\ \hline
+		Honoraria dla programistów & 144 tys. zł \\ \hline
+		Honoraria dla grafików komputerowych & 16 tys. zł \\ \hline
 	\end{tabular}
 \end{center}
 
 \subsection{Etap testowania}
 \noindent
 Podczas tego etapu każdy moduł programu będzie testowany przez niezależną grupę testerów oprogramowania. \\
-Przewidywana grupa testerów będzie składać się z 3 osób, stawka za miesiąc na osobę wynosi 4’000 PLN. \\
-\begin{equation}3 [osoby] \times 4'000 [PLN/miesiąc] \times 1.5 [miesiąca] = 18'000 [PLN] \end{equation} \\
-W razie wykrytych błędów, za naprawę odpowiadać będzie jedna grupa programistów złożona z 3 osób, stawka za miesiąc na osobę wynosi 4’000 PLN. \\
-\begin{equation}3 [osoby] \times 4'000 [PLN/miesiąc] \times 1.5 [miesiąca] = 18'000 [PLN] \end{equation} \\
-\textit{Tabela 4.} Koszty dla etapu testowania
+Przewidywana grupa testerów będzie składać się z trzech osób, stawka za miesiąc na osobę wynosi 4000 zł. \\
+\begin{equation}3 \text{[osoby]} \times 4000 \text{[zł/miesiąc]} \times 1.5 \text{[miesiąca]} = 18000 \text{[zł]} \end{equation} \\
+W razie wykrytych błędów za naprawę odpowiadać będzie jedna grupa programistów złożona z trzech osób, stawka za miesiąc na osobę wynosi 4000 zł. \\
+\begin{equation}3 \text{[osoby]} \times 4000 \text{[zł/miesiąc]} \times 1.5 \text{[miesiąca]} = 18000 \text{[zł]} \end{equation} \\
+\textit{Tabela 5.} Koszty etapu testowania
 
 \begin{center}
 	\begin{tabular}{| l | l |}
 		\hline
 		\multicolumn{1}{|c|}{Przedsięwzięcie} & 
 		\multicolumn{1}{|c|}{Przewidywany koszt} \\ \hline \hline
-		Pieniądze przeznaczone na wypłaty dla testerów & 18 tys. PLN \\ \hline
-		Pieniądze przeznaczone na wypłaty dla programistów & 18 tys. PLN \\ \hline
+		Honoraria dla testerów & 18 tys. zł \\ \hline
+		Honoraria dla programistów & 18 tys. zł \\ \hline
 	\end{tabular}
 \end{center}
 
 \subsection{Podsumowanie}
 \noindent
-Sumaryczny koszt projektu wynosi: 310'500 PLN. \\
+Łączny koszt projektu wynosi: 310500 zł. \\
 
+
+\newpage
 \addcontentsline{toc}{section}{Literatura}
 \begin{thebibliography}{2}
-	\bibitem{Harmonogram} Kawa M., Przybecki M., Jenda M., \emph{Dokumentacja witryny internetowej sklepu NUMIZMATYKA Harmonogram}, Wrocław, Studencka Pracownia Inżynierii Oprogramowania Instytut Informatyki Uniwersytetu Wrocławskiego~2013.
+	\bibitem{Harmonogram} Kawa M., Przybecki M., Jenda M.: \emph{Dokumentacja witryny internetowej sklepu NUMIZMATYKA. Harmonogram}. Wrocław, Studencka Pracownia Inżynierii Oprogramowania, Instytut Informatyki Uniwersytetu Wrocławskiego~2013.
 \end{thebibliography}
 \end{document}

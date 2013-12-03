@@ -14,6 +14,9 @@
 \renewcommand {\thesubsection} 		{\arabic{section}. \arabic{subsection}.}
 \renewcommand {\thesubsubsection} 	{\arabic{section}. \arabic{subsection}. \arabic{subsubsection}.}
 \textheight 620pt
+\makeatletter
+\renewcommand\@biblabel[1]{#1.}
+\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -36,14 +39,14 @@
 	\vfill
 	
 	{\large Wrocław, \today}									\\ [0.5cm]
-	{\large Wersja 0.1}
+	{\large Wersja 0.2}
 \end{center}
 
 \newpage
 
 % TABELKA WERSJI
 
-\textit{Tabela 0.} Historia zmian dokonanych w dokumencie
+\textit{Tabela 1.} Historia zmian dokonanych w dokumencie
 
 \begin{center}
 	\begin{tabular}{| l | l | l | l |}
@@ -53,6 +56,7 @@
 		\multicolumn{1}{|c|}{Opis} &
 		\multicolumn{1}{|c|}{Autor} \\ \hline \hline
 		2013-11-23 & 0.1 & Utworzenie dokumentu & Marek Jenda \\ \hline
+		2013-12-03 & 0.2 & Korekta dokumentu  & Maciej Przybecki \\ \hline
 	\end{tabular}
 \end{center}
 
@@ -76,23 +80,23 @@ Realizacja projektu zgodnie z dobrą praktyką inżynierii oprogramowania zosta�
 
 Projekt został podzielony na następujące etapy:
 \begin{itemize}
-	\item Analiza,
-	\item Projektowanie,
-	\item Implementacja,
-	\item Testowanie,
-	\item Ewaluacja i przekazanie.
+	\item analiza,
+	\item projektowanie,
+	\item implementacja,
+	\item testowanie,
+	\item ocena i przekazanie.
 \end{itemize}
 
 Osoby zaangażowane w realizację projektu pracują w dni robocze po 8 godzin zegarowych. Odstęp między każdym z etapów wynosi 2 dni, co chroni przed opóźnieniami z uruchomieniem kolejnego etapu.
 
 \subsection{Etap analizy}
 \noindent
-Podczas etapu analizy ustalane są wymagania projektu, potrzeby wszystkich grup użytkowników oraz precyzowane są szczegóły dotyczące architektury systemu końcowego. Dokonywane są decyzje dotyczące narzędzi, przy pomocy których projektowany będzie system. 
+Podczas etapu analizy ustalane są wymagania projektu, potrzeby wszystkich grup użytkowników oraz precyzowane są szczegóły dotyczące architektury systemu końcowego. Dokonywane są decyzje dotyczące narzędzi, za pomocą których projektowany będzie system. 
 
-Przewidywany czas potrzebny na realizację fazy analizy - 7 dni. \\
+Przewidywany czas potrzebny na realizację fazy analizy wynosi 7 dni. \\
 
 
-\textit{Tabela 1.} Ramy czasowe etapu analizy
+\textit{Tabela 2.} Ramy czasowe etapu analizy
 
 \begin{center}
 	\begin{tabular}{| l | l | l |}
@@ -106,15 +110,15 @@ Przewidywany czas potrzebny na realizację fazy analizy - 7 dni. \\
 
 \subsection{Etap projektowania}
 \noindent
-W etapie tym definiowana jest architektura sprzętowa i programowa, specyfikowane są parametry związane z wydajnością i bezpieczeństwem systemu. Projektowana jest baza danych oraz wybierane jest środowisko, w którym będzie powstawał system. W etapie tym projektowany jest wstępny interfejs użytkownika. 
+W etapie tym definiowana jest architektura sprzętowa i programowa, specyfikowane są parametry związane z wydajnością i bezpieczeństwem systemu. Projektowana jest baza danych oraz wybierane jest środowisko, w którym będzie powstawał system. W tym etapie jest projektowany wstępny interfejs użytkownika. 
 
 Dokonywany jest szczegółowy podział systemu na mniejsze moduły, określane są związki między nimi a także tworzony jest diagram klas w obrębie każdego modułu.
 
-Rezultatem etapu projektowania są specyfikacje względem których będzie dokonywana implementacja systemu. 
+Rezultatem etapu projektowania są specyfikacje, na podstawie których będzie dokonywana implementacja systemu. 
 
-Przewidziany czas trwania wynosi 30 dni. \\
+Przewidziany czas trwania etapu projektowania wynosi 30 dni. \\
 
-\textit{Tabela 2.} Ramy czasowe etapu projektowania
+\textit{Tabela 3.} Ramy czasowe etapu projektowania
 
 \begin{center}
 	\begin{tabular}{| l | l | l |}
@@ -128,13 +132,13 @@ Przewidziany czas trwania wynosi 30 dni. \\
 
 \subsection{Etap implementacji}
 \noindent
-Ten etap zawiera właściwe konstruowanie systemu na podstawie specyfikacji określonych w poprzednich etapach. Każdy moduł programu implementowany jest przez oddzielną grupę programistów, a także twórców interfejsu użytkownika. 
+Ten etap obejmuje właściwe konstruowanie systemu na podstawie specyfikacji określonych w poprzednich etapach. Każdy moduł programu jest implementowany przez oddzielną grupę programistów, a także twórców interfejsu użytkownika. 
 
 Rezultatem tego etapu są w pełni działające fragmenty systemu, które po scaleniu dają pełny system.
 
 Przewidziany czas trwania tego etapu wynosi 120 dni. \\
 
-\textit{Tabela 3.} Ramy czasowe etapu implementacji
+\textit{Tabela 4.} Ramy czasowe etapu implementacji
 
 \begin{center}
 	\begin{tabular}{| l | l | l |}
@@ -148,13 +152,13 @@ Przewidziany czas trwania tego etapu wynosi 120 dni. \\
 
 \subsection{Etap testowania}
 \noindent
-W etapie tym pojedyncze moduły jak i zintegrowany system poddawane są testom. Niezależna grupa osób testujących tworzy sytuacje testowe, których celem jest metodycznie weryfikowanie poprawności działania systemu i zgodności ze specyfikacją.
+W etapie tym pojedyncze moduły, jak i zintegrowany system, są poddawane testom. Niezależna grupa osób testujących tworzy sytuacje testowe, których celem jest metodycznie weryfikowanie poprawności działania systemu i zgodności ze specyfikacją.
 
-W etapie tym przewidziana jest możliwość wprowadzania poprawek do systemu w razie wykrytych błędów. 
+W etapie testowania przewidziana jest możliwość wprowadzania poprawek do systemu w razie wykrytych błędów. 
 
-Czas trwania wynosi 45 dni. \\
+Czas trwania etapu wynosi 45 dni. \\
 
-\textit{Tabela 4.} Ramy czasowe etapu testowania
+\textit{Tabela 5.} Ramy czasowe etapu testowania
 
 \begin{center}
 	\begin{tabular}{| l | l | l |}
@@ -166,7 +170,7 @@ Czas trwania wynosi 45 dni. \\
 	\end{tabular}
 \end{center}
 
-\subsection{Etap ewaluacji i przekazania}
+\subsection{Etap oceny i przekazania}
 \noindent
 W etapie tym produkt jest prezentowany zleceniodawcy w celu weryfikacji wstępnych założeń. 
 
@@ -174,7 +178,7 @@ W etapie tym produkt jest prezentowany zleceniodawcy w celu weryfikacji wstępny
 
 \addcontentsline{toc}{section}{Literatura}
 \begin{thebibliography}{2}
-	\bibitem{KrollKruchten07} Kroll P., Kruchten P., \emph{Rational Unified Process od strony praktycznej}, Warszawa, Wydawnictwo naukowo techniczne~2007.
+	\bibitem{KrollKruchten07} Kroll P., Kruchten P.: \emph{Rational Unified Process od strony praktycznej}. Warszawa, Wydawnictwa Naukowo--Techniczne~2007.
 \end{thebibliography}
 
 \end{document}

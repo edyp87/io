@@ -12,8 +12,12 @@
 \frenchspacing										% przestrzen po zakonczeniu zdania
 \renewcommand {\thesection} 		{\arabic{section}.}       	% chcemy kropki na koncu numeracji sekcji
 \renewcommand {\thesubsection} 		{\arabic{section}. \arabic{subsection}.}
-\renewcommand {\thesubsubsection} 	{\arabic{section}. \arabic{subsection}. \arabic{subsubsection}.}
+\renewcommand {\thesubsubsection} 	{\arabic{section}. \arabic{subsection}.
+\arabic{subsubsection}.}
 \textheight 620pt
+\makeatletter
+\renewcommand\@biblabel[1]{#1.}
+\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -36,7 +40,7 @@
 	\vfill
 	
 	{\large Wrocław, \today}									\\ [0.5cm]
-	{\large Wersja 0.1}
+	{\large Wersja 0.2}
 \end{center}
 
 \newpage
@@ -53,6 +57,7 @@
 		\multicolumn{1}{|c|}{Opis} &
 		\multicolumn{1}{|c|}{Autor} \\ \hline \hline
 		2013-11-24 & 0.1 & Utworzenie dokumentu & Marek Jenda \\ \hline
+		2013-12-03 & 0.2 & Korekta dokumentu & Maciej Przybecki \\ \hline
 	\end{tabular}
 \end{center}
 
@@ -71,7 +76,7 @@
 Niniejszy dokument ma na celu ustalenie standardów dokumentacyjnych, wedle których zorganizowana jest dokumentacja realizowanego przedsięwzięcia.
 \section{Ogólna struktura dokumentu}
 \noindent
-Każdy dokument składa się z szeregu ustalonych części w następującej kolejności:
+Każdy dokument składa się z następujących części:
 \begin{itemize}
 	\item strona tytułowa,
 	\item historia zmian dokonanych w dokumencie,
@@ -89,19 +94,19 @@ Strona tytułowa została podzielona na trzy fragmenty.
 
 W celu poinformowania odbiorcy o pochodzeniu dokumentu u góry strony tytułowej został umieszczony napis ,,Studencka Pracownia Inżynierii Oprogramowania'', pod którym bezpośrednio identyfikowana jest organizacja w obrębie której dokument został utworzony -- ,,Instytut Informatyki Uniwersytetu Wrocławskiego''.
 
-Na środku strony tytułowej identyfikowani są autorzy projektu, poniżej tytuł całej dokumentacji - ,,Dokumentacja witryny internetowej sklepu NUMIZMATYKA''.
+Na środku strony tytułowej identyfikowani są autorzy projektu, poniżej tytuł całej dokumentacji: ,,Dokumentacja witryny internetowej sklepu NUMIZMATYKA''.
 Następnie określony jest temat konkretnego dokumentu. 
 
-U dołu strony podane jest miasto w którym dokumentacja została utworzona, data ostatniej modyfikacji, a poniżej numer wersji dokumentu.
+U dołu strony jest podane miasto w którym dokumentacja została utworzona, data ostatniej modyfikacji, a poniżej numer wersji dokumentu.
 
 \subsection{Historia zmian dokonanych w dokumencie}
 \noindent
-W części tej znajduje się tabela przedstawiająca historię zmian konkretnego dokumentu. Nad tabelą znajduje się jej numer oraz opis. Sama tabela składa się z czterech kolumn określonych w pierwszym wierszu tabeli:
+W tej części znajduje się tabela przedstawiająca historię zmian konkretnego dokumentu. Nad tabelą znajduje się jej numer oraz opis. Sama tabela składa się z czterech kolumn określonych w pierwszym wierszu tabeli:
 \begin{itemize}
 	\item ,,Data'' -- data w standardzie \textit{ISO 8601} czyli YYYY-MM-DD. Data określa dzień, w którym dokonana została zmiana,
 	\item ,,Numer wersji'' -- numer wersji po konkretnej zmianie,
 	\item ,,Opis'' -- krótki opis dokonanej zmiany,
-	\item ,,Autor'' -- imię i nazwisko osoby, która dokonała zmian w dokumencie. Jeżeli osób było więcej, imiona i nazwiska oddzielone są przecinkiem.
+	\item ,,Autor'' -- imię i nazwisko osoby, która dokonała zmian w dokumencie. Jeżeli osób było więcej, imiona i nazwiska są oddzielone przecinkami.
 \end{itemize}
 
 Pierwszym numerem wersji zawsze jest 0.1, a zmiana ta opisana jest jako ,,Utworzenie dokumentu''. Numery wersji i daty uporządkowane są rosnąco, a numer wersji z ostatniego wiersza tabeli widnieje również na stronie tytułowej dokumentu.
@@ -121,21 +126,21 @@ W pozostałych rozdziałach szczegółowo omawiane są kwestie dotyczące tematy
 \subsection{Sekcja bibliograficzna}
 \noindent
 Sekcja ta rozpoczyna się napisem ,,Literatura'', pod którą, w liście numerowanej, umieszczone są pojedyncze wpisy z notami bibliograficznymi.
-Każdy wpis rozpoczyna się numerem umieszczonym w nawiasie kwadratowym. Właściwy wpis formatowany jest zgodnie z normą ISO 690, która opisana została we odpowiedniej dokumentacji. 
+Każdy wpis rozpoczyna się numerem umieszczonym w nawiasie kwadratowym. Właściwy wpis formatowany jest zgodnie z normą ISO 690, która opisana została w odpowiedniej dokumentacji. 
 
 \section{Szczegółowe wytyczne dotyczące rozdziałów}
 
 \subsection{Czcionka i dostępy}
 \noindent
-Domyślnym rozmiarem czcionki stosowanym w dokumencie jest 11 punktów typograficznych (dalej - pt). Identyfikatory rozdziałów i podrozdziałów są pogrubione, ponadto tytuły rozdziałów głównych pisane są czcionką 15pt, natomiast podrozdziałów - 13pt.
+Domyślnym rozmiarem czcionki stosowanym w dokumencie jest 11 punktów typograficznych (dalej -- pt). Identyfikatory rozdziałów i podrozdziałów są pogrubione, ponadto tytuły rozdziałów głównych pisane są czcionką 15pt, natomiast podrozdziałów -- 13pt.
 
-Domyślnym odstępem stosowanym w dokumencie jest światło międzywierszowe o wielkości 1,15. Odstęp między tytułem rozdziału a jego zawartością wynosi 1,5 natomiast odstęp między rozdziałem poprzednim a kolejnym tytułem -- 2.
+Domyślnym odstępem stosowanym w dokumencie jest światło międzywierszowe o wielkości 1,15pt. Odstęp między tytułem rozdziału a jego zawartością wynosi 1,5pt natomiast odstęp między rozdziałem poprzednim a kolejnym tytułem -- 2pt.
 	
 Każdy paragraf w rozdziałach rozpoczyna się wcięciem. Wyjątkiem jest pierwszy paragraf, który w całości wyrównany jest do lewego marginesu.  Tekst w obrębie rozdziału jest wyrównany do lewego i prawego marginesu.
 
 \subsection{Numeracja rozdziałów}
 \noindent
-Rozdziały w całym dokumencie numerowane są cyframi arabskimi a każdy rozdział niższego poziomu identyfikowany jest kolejną liczbą arabską oddzieloną od poprzedniej liczby pojedynczą kropką i odstępem. 
+Rozdziały w całym dokumencie są numerowane cyframi arabskimi, a każdy rozdział niższego poziomu jest identyfikowany kolejną liczbą arabską oddzieloną od poprzedniej liczby pojedynczą kropką i odstępem. 
 
 Jeżeli w dokumencie występuje sekcja bibliograficzna, to jest ona opisana jako ,,Literatura'' i traktowana jest jako rozdział najwyższego poziomu bez określonej numeracji. 
 
@@ -148,8 +153,8 @@ W tabeli znajduje się tylko tekst, w pierwszym wierszu umieszczone są wyśrodk
 \newpage
 \addcontentsline{toc}{section}{Literatura}
 \begin{thebibliography}{2}
-	\bibitem{KrollKruchten07} Kroll P., Kruchten P., \emph{Rational Unified Process od strony praktycznej}, Warszawa, Wydawnictwo naukowo techniczne~2007.
-	\bibitem{NeckaStocki09} Nęcka E., Stocki R., \emph{Jak pisać prace z psychologii - poradnik dla studentów i badaczy}, Kraków, Universitas~2009.
+	\bibitem{KrollKruchten07} Kroll P., Kruchten P.: \emph{Rational Unified Process od strony praktycznej}. Warszawa, Wydawnictwa Naukowo--Techniczne~2007.
+	\bibitem{NeckaStocki09} Nęcka E., Stocki R.: \emph{Jak pisać prace z psychologii -- poradnik dla studentów i badaczy}. Kraków, Universitas~2009.
 	\bibitem{IEEE830} IEEE Std 830-1998. \emph{IEEE Recommended Practice for Software Requirements Specifications}.
 	\bibitem{PNISO690} PN-ISO 690:2002. \emph{Dokumentacja – Przypisy bibliograficzne – Zawartość, forma i struktura}.
 	\bibitem{ISO8601} ISO 8601. \emph{Date and Time Formats}.
