@@ -213,3 +213,14 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+##################### dodane przez marek ##################
+
+#############
+## Latex
+#############
+
+*.aux
+*.pdf
+*.toc
+*.dvi
