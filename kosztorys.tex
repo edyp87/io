@@ -1,25 +1,32 @@
 ﻿%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%                   PREAMBUŁA / USTAWIENIA               %%%%%%%%%%%%%%%%%%%
 
-\documentclass [11pt, a4paper, leqno]	{article}	% czcionka 11pt, a4, numery formuł do lewej, artykuł
-\usepackage [polish]	{babel} 					% ustawiamy jezyk polski dokumentu wynikowego
-\usepackage 			{polski}					% zapewniamy sobie poprawne lamanie polski wyrazow
-\usepackage [utf8]		{inputenc}					% kodowanie pliku zrodlowego
-\usepackage [T1]		{fontenc}					% kodowanie fontow
-\usepackage 			{indentfirst}				% wciecie do kazdego akapitu
-\usepackage{amsthm}
-\usepackage[intlimits]{amsmath}
- 
+\documentclass 	[11pt, a4paper, leqno]	{article}					% czcionka 11pt, a4, numery formuł do lewej, artykuł
+\usepackage 	[polish]		{babel} 					% ustawiamy jezyk polski dokumentu wynikowego
+\usepackage 				{polski}					% zapewniamy sobie poprawne lamanie polski wyrazow
+\usepackage 	[utf8]			{inputenc}					% kodowanie pliku zrodlowego
+\usepackage 	[T1]			{fontenc}					% kodowanie fontow
+\usepackage 				{indentfirst}					% wciecie do kazdego akapitu
 \usepackage				{setspace}					% interlinia: 1.15
-\setstretch {1.15}
+\setstretch 	{1.15}
 \frenchspacing										% przestrzen po zakonczeniu zdania
-\renewcommand {\thesection} 		{\arabic{section}.}       	% chcemy kropki na koncu numeracji sekcji
-\renewcommand {\thesubsection} 		{\arabic{section}. \arabic{subsection}.}
-\renewcommand {\thesubsubsection} 	{\arabic{section}. \arabic{subsection}. \arabic{subsubsection}.}
-\textheight 620pt
+\renewcommand 				{\thesection} 		{\arabic{section}.}     % chcemy kropki na koncu numeracji sekcji
+\renewcommand 				{\thesubsection} 	{\arabic{section}. \arabic{subsection}.}
+\renewcommand 				{\thesubsubsection} 	{\arabic{section}. \arabic{subsection}.\arabic{subsubsection}.}
+\textheight 	620pt
 \makeatletter
-\renewcommand\@biblabel[1]{#1.}
+\renewcommand\@biblabel[1]{#1}
 \makeatother
+
+\usepackage{ifthen}
+\newcommand{\newoddside}{								% tworzymy polecenie przenoszace ciag dalszy tekstu na kolejna nieparzysta strone
+	\ifthenelse{ \NOT \isodd{\thepage} } {
+	    \newpage
+	} {
+	    \newpage
+	    \newpage
+	}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

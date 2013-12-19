@@ -1,46 +1,55 @@
 ﻿%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%                   PREAMBUŁA / USTAWIENIA               %%%%%%%%%%%%%%%%%%%
 
-\documentclass [11pt, a4paper, leqno]	{article}	% czcionka 11pt, a4, numery formuł do lewej, artykuł
-\usepackage [polish]	{babel} 					% ustawiamy jezyk polski dokumentu wynikowego
-\usepackage 			{polski}					% zapewniamy sobie poprawne lamanie polski wyrazow
-\usepackage [utf8]		{inputenc}					% kodowanie pliku zrodlowego
-\usepackage [T1]		{fontenc}					% kodowanie fontow
-\usepackage 			{indentfirst}				% wciecie do kazdego akapitu
+\documentclass 	[11pt, a4paper, leqno]	{article}					% czcionka 11pt, a4, numery formuł do lewej, artykuł
+\usepackage 	[polish]		{babel} 					% ustawiamy jezyk polski dokumentu wynikowego
+\usepackage 				{polski}					% zapewniamy sobie poprawne lamanie polski wyrazow
+\usepackage 	[utf8]			{inputenc}					% kodowanie pliku zrodlowego
+\usepackage 	[T1]			{fontenc}					% kodowanie fontow
+\usepackage 				{indentfirst}					% wciecie do kazdego akapitu
 \usepackage				{setspace}					% interlinia: 1.15
-\setstretch {1.15}
+\setstretch 	{1.15}
 \frenchspacing										% przestrzen po zakonczeniu zdania
-\renewcommand {\thesection} 		{\arabic{section}.}       	% chcemy kropki na koncu numeracji sekcji
-\renewcommand {\thesubsection} 		{\arabic{section}. \arabic{subsection}.}
-\renewcommand {\thesubsubsection} 	{\arabic{section}. \arabic{subsection}.
-\arabic{subsubsection}.}
-\textheight 620pt
+\renewcommand 				{\thesection} 		{\arabic{section}.}     % chcemy kropki na koncu numeracji sekcji
+\renewcommand 				{\thesubsection} 	{\arabic{section}. \arabic{subsection}.}
+\renewcommand 				{\thesubsubsection} 	{\arabic{section}. \arabic{subsection}.\arabic{subsubsection}.}
+\textheight 	620pt
 \makeatletter
-\renewcommand\@biblabel[1]{#1.}
+\renewcommand\@biblabel[1]{#1}
 \makeatother
+
+\usepackage{ifthen}
+\newcommand{\newoddside}{								% tworzymy polecenie przenoszace ciag dalszy tekstu na kolejna nieparzysta strone
+	\ifthenelse{ \NOT \isodd{\thepage} } {
+	    \newpage
+	} {
+	    \newpage
+	    \newpage
+	}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-% STRONA TYTUŁOWA
+% STRONA TYTUŁOWAf
 
 \begin{center}
-	\thispagestyle{empty} 							% brak numeracji, naglowka i stopki
+	\thispagestyle{empty} % brak numeracji, naglowka i stopki
 	{\large Studencka Pracownia Inżynierii Oprogramowania} 		\\ [0.5cm]
 	{\large Instytut Informatyki Uniwersytetu Wrocławskiego} 	\\ [6.0cm]
 
 	{\large Mateusz Kawa, Maciej Przybecki, Marek Jenda} 		\\ [1.5cm]
 
-	{\huge Dokumentacja witryny internetowej sklepu} 			\\ [0.5cm]
-	{\huge NUMIZMATYKA} 										\\ [1.5cm]
+	{\huge Dokumentacja witryny internetowej sklepu} 		\\ [0.5cm]
+	{\huge NUMIZMATYKA} 						\\ [1.5cm]
 
-	{\large Standardy dokumentacyjne} 							\\ [0.5cm]
+	{\large Standardy dokumentacyjne} 				\\ [0.5cm]
 
 	\vfill
 	
-	{\large Wrocław, \today}									\\ [0.5cm]
-	{\large Wersja 0.3}
+	{\large Wrocław, \today}					\\ [0.5cm]
+	{\large Wersja 0.4}
 \end{center}
 
 \newpage
@@ -55,20 +64,21 @@
 		\multicolumn{1}{|c|}{Data} & 
 		\multicolumn{1}{|c|}{Numer wersji} &  
 		\multicolumn{1}{|c|}{Opis} &
-		\multicolumn{1}{|c|}{Autor} \\ \hline \hline
-		2013-11-24 & 0.1 & Utworzenie dokumentu & Marek Jenda \\ \hline
-		2013-12-03 & 0.2 & Korekta dokumentu & Maciej Przybecki \\ \hline
-		2013-12-10 & 0.3 & Korekta dokumentu & Mateusz Kawa \\ \hline
+		\multicolumn{1}{|c|}{Autor} 				 \\ \hline \hline
+		2013-11-24 & 0.1 & Utworzenie dokumentu & Marek Jenda	 \\ \hline
+		2013-12-03 & 0.2 & Korekta dokumentu & Maciej Przybecki	 \\ \hline
+		2013-12-10 & 0.3 & Korekta dokumentu & Mateusz Kawa	 \\ \hline
+		2013-12-19 & 0.4 & Korekta dokumentu & Marek Jenda	 \\ \hline
 	\end{tabular}
-\end{center}
+\end{center} 
 
-\newpage
+\medskip % tutaj podejmujemy decyzję czy spis treści zmieści się jeszcze na tej stronie (patrz: Ogólna struktura dokumentu).
 
 % SPIS TRESCI
 
 \tableofcontents
 
-\newpage
+\newoddside
 
 \section{Wprowadzenie}
 
@@ -86,19 +96,26 @@ Każdy dokument składa się z następujących części:
 	\item opcjonalnie literatura.
 \end{itemize}
 
-Każda z wyżej wymienionych części rozpoczyna się na nowej stronie dokumentu.
+Każda z wyżej wymienionych części rozpoczyna się na kolejnej nieparzystej stronie dokumentu, chyba że zajmuje mniej niż dwie trzecie strony - wówczas kolejną część można rozpocząć bezpośrednio po końcu poprzedniej. 
+
+Szczególnymi wyjątkami od powyższej reguły są:
+
+\begin{itemize}
+	\item historia zmian dokonanych w dokumencie, która powinna być umieszczona na stronie drugiej,
+	\item umieszczenie spisu treści bezpośrednio po historii zmian jest dopuszczalne tylko w przypadku, gdy jego wielkość jest nie większa niż pozostały obszar strony pod historią wersji.
+\end{itemize}
 
 \section{Szczegółowa struktura dokumentu}
 \subsection{Strona tytułowa}
 \noindent
 Strona tytułowa została podzielona na trzy fragmenty.
 
-W celu poinformowania odbiorcy o pochodzeniu dokumentu u góry strony tytułowej został umieszczony napis ,,Studencka Pracownia Inżynierii Oprogramowania'', pod którym bezpośrednio identyfikowana jest organizacja, w obrębie której dokument został utworzony: Instytut Informatyki Uniwersytetu Wrocławskiego.
+W celu poinformowania odbiorcy o pochodzeniu dokumentu u góry strony jest umieszczona nazwa pracowni, tu: ,,Studencka Pracownia Inżynierii Oprogramowania'', pod którą występuje nazwa jednostki organizacyjnej uczelni, tu: Instytut Informatyki Uniwersytetu Wrocławskiego.
 
-Na środku strony tytułowej są identyfikowani autorzy projektu, poniżej tytuł całej dokumentacji: ,,Dokumentacja witryny internetowej sklepu NUMIZMATYKA''.
-Następnie określony jest temat konkretnego dokumentu. 
+Na środku strony tytułowej są podane imiona i nazwiska autorów projektu, poniżej tytuł całej dokumentacji, tu: ,,Dokumentacja witryny internetowej sklepu NUMIZMATYKA''.
+Dalej jest określony temat konkretnego dokumentu. 
 
-U dołu strony jest podane miasto, w którym dokumentacja została utworzona, data ostatniej modyfikacji, a poniżej numer wersji dokumentu.
+U dołu strony jest podana nazwa miasta, w którym dokumentacja została utworzona, data ostatniej modyfikacji, a poniżej numer wersji dokumentu.
 
 \subsection{Historia zmian dokonanych w dokumencie}
 \noindent
@@ -122,12 +139,13 @@ W rozdziale tym opisana jest zwięźle zawartość dokumentu wprowadzająca czyt
 
 \subsection{Pozostałe rozdziały}
 \noindent
-W pozostałych rozdziałach szczegółowo omawiane są kwestie dotyczące tematyki poruszanej w dokumencie.
+W pozostałych rozdziałach są omawiane szczegółowo kwestie dotyczące tematyki poruszanej w dokumencie.
 
 \subsection{Sekcja bibliograficzna}
 \noindent
-Sekcja ta rozpoczyna się napisem ,,Literatura'', pod którym, w liście numerowanej, są umieszczone pojedyncze wpisy z notami bibliograficznymi.
-Każdy wpis rozpoczyna się numerem umieszczonym w nawiasie kwadratowym. Właściwy wpis formatowany jest zgodnie z normą ISO 690, która opisana została w Dokumentacja – Przypisy bibliograficzne – Zawartość, forma i struktura.. 
+Sekcja ta rozpoczyna się napisem ,,Literatura'', pod którym, na ponumerowanej liście, są umieszczone pojedyncze wpisy z notami bibliograficznymi.
+Każdy wpis rozpoczyna się numerem porządkowym. Właściwy wpis jest formatowany (z minimalnymi zmianami) zgodnie z normą ISO 690, która opisana została w Dokumentacja – Przypisy bibliograficzne – Zawartość, forma i struktura.
+Przykład formatowania not bibliograficznych znajduje się na końcu tego dokumentu.
 
 \section{Szczegółowe wytyczne dotyczące rozdziałów}
 
@@ -151,7 +169,7 @@ Nad każdą tabelą znajduje się jej etykieta składająca się z pochyłego na
 
 W tabeli znajduje się tylko tekst, w pierwszym wierszu są umieszczone wyśrodkowane etykiety kolumn, natomiast w kolejnych wierszach umieszczona jest właściwa zawartość tabeli. 
 
-\newpage
+\newoddside
 \addcontentsline{toc}{section}{Literatura}
 \begin{thebibliography}{2}
 	\bibitem{KrollKruchten07} Kroll P., Kruchten P.: \emph{Rational Unified Process od strony praktycznej}. Warszawa, Wydawnictwa Naukowo--Techniczne~2007.
