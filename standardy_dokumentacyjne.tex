@@ -15,7 +15,7 @@
 \renewcommand 				{\thesubsubsection} 	{\arabic{section}. \arabic{subsection}.\arabic{subsubsection}.}
 \textheight 	620pt
 \makeatletter
-\renewcommand\@biblabel[1]{#1}
+\renewcommand\@biblabel[1]{#1.}
 \makeatother
 
 \usepackage{ifthen}
@@ -49,7 +49,7 @@
 	\vfill
 	
 	{\large Wrocław, \today}					\\ [0.5cm]
-	{\large Wersja 0.4}
+	{\large Wersja 0.5}
 \end{center}
 
 \newpage
@@ -69,6 +69,7 @@
 		2013-12-03 & 0.2 & Korekta dokumentu & Maciej Przybecki	 \\ \hline
 		2013-12-10 & 0.3 & Korekta dokumentu & Mateusz Kawa	 \\ \hline
 		2013-12-19 & 0.4 & Korekta dokumentu & Marek Jenda	 \\ \hline
+		2013-01-08 & 0.5 & Korekta dokumentu & Marek Jenda	 \\ \hline
 	\end{tabular}
 \end{center} 
 
@@ -96,7 +97,7 @@ Każdy dokument składa się z następujących części:
 	\item opcjonalnie literatura.
 \end{itemize}
 
-Każda z wyżej wymienionych części rozpoczyna się na kolejnej nieparzystej stronie dokumentu, chyba że zajmuje mniej niż dwie trzecie strony - wówczas kolejną część można rozpocząć bezpośrednio po końcu poprzedniej. 
+Każda z wyżej wymienionych części rozpoczyna się na kolejnej nieparzystej stronie dokumentu, chyba że zajmuje mniej niż dwie trzecie strony -- wówczas kolejną część można rozpocząć bezpośrednio po końcu poprzedniej. 
 
 Szczególnymi wyjątkami od powyższej reguły są:
 
@@ -110,7 +111,7 @@ Szczególnymi wyjątkami od powyższej reguły są:
 \noindent
 Strona tytułowa została podzielona na trzy fragmenty.
 
-W celu poinformowania odbiorcy o pochodzeniu dokumentu u góry strony jest umieszczona nazwa pracowni, tu: ,,Studencka Pracownia Inżynierii Oprogramowania'', pod którą występuje nazwa jednostki organizacyjnej uczelni, tu: Instytut Informatyki Uniwersytetu Wrocławskiego.
+W celu poinformowania odbiorcy o pochodzeniu dokumentu u góry strony jest umieszczona nazwa pracowni, tu: Studencka Pracownia Inżynierii Oprogramowania, pod którą występuje nazwa jednostki organizacyjnej uczelni, tu: Instytut Informatyki Uniwersytetu Wrocławskiego.
 
 Na środku strony tytułowej są podane imiona i nazwiska autorów projektu, poniżej tytuł całej dokumentacji, tu: ,,Dokumentacja witryny internetowej sklepu NUMIZMATYKA''.
 Dalej jest określony temat konkretnego dokumentu. 
@@ -121,17 +122,17 @@ U dołu strony jest podana nazwa miasta, w którym dokumentacja została utworzo
 \noindent
 W tej części znajduje się tabela przedstawiająca historię zmian konkretnego dokumentu. Nad tabelą znajduje się jej numer oraz opis. Sama tabela składa się z czterech kolumn określonych w pierwszym wierszu tabeli:
 \begin{itemize}
-	\item ,,Data'' -- data w standardzie \textit{ISO 8601} czyli YYYY-MM-DD. Data określa dzień, w którym dokonana została zmiana,
+	\item ,,Data'' -- data w standardzie \textit{ISO 8601} czyli RRRR-MM-DD, data określa dzień, w którym dokonana została zmiana,
 	\item ,,Numer wersji'' -- numer wersji po konkretnej zmianie,
 	\item ,,Opis'' -- krótki opis dokonanej zmiany,
 	\item ,,Autor'' -- imię i nazwisko osoby, która dokonała zmian w dokumencie. Jeżeli osób było więcej, imiona i nazwiska są oddzielone przecinkami.
 \end{itemize}
 
-Pierwszym numerem wersji zawsze jest 0.1, a zmiana ta opisana jest jako ,,Utworzenie dokumentu''. Numery wersji i daty są uporządkowane rosnąco, a numer wersji z ostatniego wiersza tabeli widnieje również na stronie tytułowej dokumentu.
+Pierwszym numerem wersji jest zawsze 0.1, a zmiana ta opisana jest jako ,,Utworzenie dokumentu''. Numery wersji i daty są uporządkowane rosnąco, a numer wersji z ostatniego wiersza tabeli widnieje również na stronie tytułowej dokumentu.
 
 \subsection{Spis treści}
 \noindent
-Na górze strony ze spisem treści znajduje się napis ,,Spis treści'', natomiast poniżej znajduje się właściwy spis rozdziałów znajdujących się w dokumencie. 
+Na górze strony ze spisem treści znajduje się napis ,,Spis treści'', natomiast poniżej znajduje się właściwy spis rozdziałów i podrozdziałów znajdujących się w dokumencie. 
 
 \subsection{Rozdział nakreślający treść dokumentu}
 \noindent
@@ -143,31 +144,31 @@ W pozostałych rozdziałach są omawiane szczegółowo kwestie dotyczące tematy
 
 \subsection{Sekcja bibliograficzna}
 \noindent
-Sekcja ta rozpoczyna się napisem ,,Literatura'', pod którym, na ponumerowanej liście, są umieszczone pojedyncze wpisy z notami bibliograficznymi.
-Każdy wpis rozpoczyna się numerem porządkowym. Właściwy wpis jest formatowany (z minimalnymi zmianami) zgodnie z normą ISO 690, która opisana została w Dokumentacja – Przypisy bibliograficzne – Zawartość, forma i struktura.
+Sekcja ta rozpoczyna się tytułem ,,Literatura'', pod którym, na ponumerowanej liście, są umieszczone pojedyncze wpisy z notami bibliograficznymi.
+Każdy wpis rozpoczyna się numerem porządkowym. Właściwy wpis jest formatowany (z minimalnymi zmianami) zgodnie z normą ISO 690 [4].
 Przykład formatowania not bibliograficznych znajduje się na końcu tego dokumentu.
 
 \section{Szczegółowe wytyczne dotyczące rozdziałów}
 
 \subsection{Czcionka i odstępy}
 \noindent
-Domyślnym rozmiarem czcionki stosowanym w dokumencie jest 11 punktów typograficznych (dalej -- pt). Identyfikatory rozdziałów i podrozdziałów są pogrubione, ponadto tytuły rozdziałów głównych składane są czcionką 15pt, natomiast podrozdziałów -- 13pt.
+Domyślnym rozmiarem czcionki stosowanym w dokumencie jest 11 punktów typograficznych (dalej -- pt). Identyfikatory rozdziałów i podrozdziałów są pogrubione, ponadto tytuły rozdziałów głównych składane są czcionką 15\,pt, natomiast podrozdziałów -- 13\,pt.
 
-Domyślnym odstępem stosowanym w dokumencie jest światło międzywierszowe o wielkości 1,15pt. Odstęp między tytułem rozdziału a jego zawartością wynosi 1,5pt, natomiast odstęp między rozdziałem poprzednim a kolejnym tytułem -- 2pt.
+Domyślnym odstępem stosowanym w dokumencie jest światło międzywierszowe o wielkości 1,15\,pt. Odstęp między tytułem rozdziału a jego zawartością wynosi 1,5\,pt, natomiast odstęp między rozdziałem poprzednim a kolejnym tytułem -- 2\,pt.
 	
 Każdy paragraf w rozdziałach rozpoczyna się wcięciem. Wyjątkiem jest pierwszy paragraf, który w całości wyrównany jest do lewego marginesu.  Tekst w obrębie rozdziału jest wyrównany do lewego i prawego marginesu.
 
 \subsection{Numeracja rozdziałów}
 \noindent
-Rozdziały w całym dokumencie są numerowane cyframi arabskimi, a każdy rozdział niższego poziomu jest identyfikowany kolejną liczbą arabską, oddzieloną od poprzedniej liczby pojedynczą kropką i odstępem. 
+Numery rozdziałów w całym dokumencie są składane cyframi arabskimi, a każdy rozdział niższego poziomu jest identyfikowany kolejnym numerem, oddzielonym od poprzedniego pojedynczą kropką i małym odstępem. 
 
 Jeżeli w dokumencie występuje sekcja bibliograficzna, to jest ona opisana jako ,,Literatura'' i traktowana jest jako rozdział najwyższego poziomu bez określonej numeracji. 
 
 \subsection{Tabele}
 \noindent
-Nad każdą tabelą znajduje się jej etykieta składająca się z pochyłego napisu ,,Tabela XX. '' gdzie XX jest kolejnym numerem tabeli w tekście, po którym następuje krótki opis tabeli. Opis nie jest zakończony kropką. 
+Nad każdą tabelą znajduje się jej etykieta składająca się z pochyłego napisu ,,Tabela XX. '' gdzie XX jest kolejnym numerem tabeli w tekście, po którym następuje krótki opis tabeli. Tytuł tabeli nie jest zakończony kropką. Tabela zawierająca historię zmian ma numer 0.
 
-W tabeli znajduje się tylko tekst, w pierwszym wierszu są umieszczone wyśrodkowane etykiety kolumn, natomiast w kolejnych wierszach umieszczona jest właściwa zawartość tabeli. 
+W tabeli znajduje się tylko tekst, w pierwszym wierszu są umieszczone wyśrodkowane etykiety kolumn, natomiast w kolejnych wierszach umieszczona jest właściwa zawartość tabeli. Tekst w każdej rubryce zaczyna się dużą literą.
 
 \newoddside
 \addcontentsline{toc}{section}{Literatura}
@@ -175,7 +176,7 @@ W tabeli znajduje się tylko tekst, w pierwszym wierszu są umieszczone wyśrodk
 	\bibitem{KrollKruchten07} Kroll P., Kruchten P.: \emph{Rational Unified Process od strony praktycznej}. Warszawa, Wydawnictwa Naukowo--Techniczne~2007.
 	\bibitem{NeckaStocki09} Nęcka E., Stocki R.: \emph{Jak pisać prace z psychologii -- poradnik dla studentów i badaczy}. Kraków, Universitas~2009.
 	\bibitem{IEEE830} IEEE Std 830-1998. \emph{IEEE Recommended Practice for Software Requirements Specifications}.
-	\bibitem{PNISO690} PN-ISO 690:2002. \emph{Dokumentacja – Przypisy bibliograficzne – Zawartość, forma i struktura}.
+	\bibitem{PNISO690} PN-ISO 690:2002. \emph{Dokumentacja – przypisy bibliograficzne – zawartość, forma i struktura}.
 	\bibitem{ISO8601} ISO 8601. \emph{Date and Time Formats}.
 \end{thebibliography}
 
